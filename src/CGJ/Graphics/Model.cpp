@@ -1,5 +1,6 @@
 #include <CGJ/Graphics/Model.h>
 
+namespace cgj {
 Model::Model(const ModelMesh& mesh) {
     addData(mesh);
 }
@@ -43,7 +44,8 @@ void Model::addData(const ModelMesh& mesh) {
     genVAO();
 
     addVBO(3, mesh.vertexPositions);
-    addVBO(2, mesh.textureCoords);
+    if(!mesh.textureCoords.empty())
+        addVBO(2, mesh.textureCoords);
     addEBO(mesh.indices);
 }
 
@@ -98,4 +100,5 @@ int Model::getIndicesCount() const {
 
 const RenderInfo& Model::getRenderInfo() const {
     return m_renderInfo;
+}
 }

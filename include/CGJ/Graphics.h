@@ -3,3 +3,4 @@
 #include "Graphics/SphericalCamera.h"
 
 #include "Graphics/ShaderProgram.h"
+#include "Graphics/Model.h"

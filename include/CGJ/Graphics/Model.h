@@ -7,6 +7,7 @@
 #include <utility>
 #include <vector>
 
+namespace cgj {
 struct ModelMesh
 {
     std::vector<GLfloat> vertexPositions;
@@ -42,5 +43,5 @@ class Model : public NonCopyable {
         int m_vboCount = 0;
         std::vector<GLuint> m_buffers;
 };
-
+}
 #endif
