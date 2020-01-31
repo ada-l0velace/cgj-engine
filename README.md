@@ -1,5 +1,5 @@
-# game-engine-cpp
-
+# cgj-engine
+C++ OpenGL engine
 What to install in linux
 
 ```bash
