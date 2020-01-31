@@ -6,7 +6,7 @@
 namespace cgj {
 class FPSCamera : public  ICamera {
 public:
-	Vector3 position;
+    Vector3 position;
     Vector3 front;
     Vector3 up;
     Vector3 right;

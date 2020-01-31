@@ -205,10 +205,10 @@ class ShaderProgram {
             glUniform1f(uniformID, value);
         }
 
-		void setUniform(const char* name, int value) {
-			GLint uniformID = getUniformLocation(name);
-			glUniform1i(uniformID, value);
-		}
+        void setUniform(const char* name, int value) {
+            GLint uniformID = getUniformLocation(name);
+            glUniform1i(uniformID, value);
+        }
 
 
         void setUniform(const char* name, const float* m){

@@ -199,19 +199,19 @@ namespace MatrixFactory {
         return m;
     }
 
-	Matrix4 lookAt(Vector3 eye, Vector3 center, Vector3 up) {
-			Vector3 view = center - eye;
-			Vector3 v = view.normalize();
-			Vector3 side = v.cross(up);
-			Vector3 s = side.normalize();
-			Vector3 u = s.cross(v);
+    Matrix4 lookAt(Vector3 eye, Vector3 center, Vector3 up) {
+            Vector3 view = center - eye;
+            Vector3 v = view.normalize();
+            Vector3 side = v.cross(up);
+            Vector3 s = side.normalize();
+            Vector3 u = s.cross(v);
 
-			Matrix4 vMatrix = Matrix4(s.x, s.y, s.z, -s.dot(eye),
-				u.x, u.y, u.z, -u.dot(eye),
-				-v.x, -v.y, -v.z, v.dot(eye),
-				0, 0, 0, 1);
-			return vMatrix;//MatrixFactory::;//vMatrix;
-	}
+            Matrix4 vMatrix = Matrix4(s.x, s.y, s.z, -s.dot(eye),
+                u.x, u.y, u.z, -u.dot(eye),
+                -v.x, -v.y, -v.z, v.dot(eye),
+                0, 0, 0, 1);
+            return vMatrix;//MatrixFactory::;//vMatrix;
+    }
 
     Matrix4 translate(Vector3 v) {
         Matrix4 translationMatrix = Create4DTranslation(v.x,v.y,v.z);

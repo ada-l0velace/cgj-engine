@@ -89,10 +89,10 @@ class Vector3 {
             z /= k;
         }
 
-		inline bool operator() (const Vector3& lhs, const Vector3& rhs) const
-		{
+        inline bool operator() (const Vector3& lhs, const Vector3& rhs) const
+        {
             return lhs.magnitude() < rhs.magnitude();
-		}
+        }
 
         inline friend std::ostream& operator<<(std::ostream& os, const Vector3 &vec) {
             os << '{' << vec.x << ", " << vec.y << ", " << vec.z << "}\n";

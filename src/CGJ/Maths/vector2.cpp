@@ -4,39 +4,39 @@
 #include <CGJ/Maths/vector2.h>
 namespace cgj {
 Vector2::Vector2(float x, float y) {
-	set(x,y);
+    set(x,y);
 }
 
 Vector2::Vector2() {
-	set(0,0);
+    set(0,0);
 }
 Vector2::~Vector2(void) {
 
 }
 
 inline void Vector2::set(float x, float y) { 
-	this->x = x; this->y = y; 
+    this->x = x; this->y = y; 
 }
 
 float Vector2::dot(const Vector2 &vec) {
-	return x*vec.x + y*vec.y;
+    return x*vec.x + y*vec.y;
 }
 
 float Vector2::angle(const Vector2 &vec) {
-	float dota = dot(vec)/(vec.magnitude()*magnitude());
-	return acosf((dota < -1.0f ? -1.0f : ( dota > 1.0f ? 1.0f : dota )));
+    float dota = dot(vec)/(vec.magnitude()*magnitude());
+    return acosf((dota < -1.0f ? -1.0f : ( dota > 1.0f ? 1.0f : dota )));
 }
 
 Vector2 Vector2::rotate(float theta) {
-	float cos_theta = cosf(theta * (float)M_PI / 180.0f);
-	float sin_theta = sinf(theta * (float)M_PI / 180.0f);
-	Vector2 v = Vector2(x*cos_theta - y*sin_theta, y*cos_theta + x*sin_theta);
-	v.clean();
-	return v;
+    float cos_theta = cosf(theta * (float)M_PI / 180.0f);
+    float sin_theta = sinf(theta * (float)M_PI / 180.0f);
+    Vector2 v = Vector2(x*cos_theta - y*sin_theta, y*cos_theta + x*sin_theta);
+    v.clean();
+    return v;
 }
 
 Vector2 Vector2::normalize() {
-	return x == 0 && y == 0 ? *this : *this/magnitude();
+    return x == 0 && y == 0 ? *this : *this/magnitude();
 }
 
 void Vector2::clean(){
@@ -46,6 +46,6 @@ void Vector2::clean(){
 }
 
 float Vector2::magnitude() const { 
-	return sqrtf(x*x+y*y);
+    return sqrtf(x*x+y*y);
 }
 }

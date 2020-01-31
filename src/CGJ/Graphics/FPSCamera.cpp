@@ -67,13 +67,13 @@ void FPSCamera::eulerRotation() {
 
 
 void FPSCamera::setViewMatrix(const Matrix4& viewMatrix) {
-	glBindBuffer(GL_UNIFORM_BUFFER, matricesVbo);
+    glBindBuffer(GL_UNIFORM_BUFFER, matricesVbo);
     #ifdef _WIN32
     #else
         glFinish();
     #endif 
- 	glBufferSubData(GL_UNIFORM_BUFFER, 0, sizeof(viewMatrix.data), viewMatrix.data);
-	glBindBuffer(GL_UNIFORM_BUFFER, 0);
+     glBufferSubData(GL_UNIFORM_BUFFER, 0, sizeof(viewMatrix.data), viewMatrix.data);
+    glBindBuffer(GL_UNIFORM_BUFFER, 0);
 }
 void FPSCamera::update() {
     updateView();
@@ -92,13 +92,13 @@ void FPSCamera::update() {
 
 void FPSCamera::setProjectionMatrix(const Matrix4& projectionMatrix) {
     pMatrix = projectionMatrix;
-	glBindBuffer(GL_UNIFORM_BUFFER, matricesVbo);	
+    glBindBuffer(GL_UNIFORM_BUFFER, matricesVbo);    
     #ifdef _WIN32
     #else
-    	glFinish();
+        glFinish();
     #endif 
-	glBufferSubData(GL_UNIFORM_BUFFER, sizeof(projectionMatrix.data), sizeof(projectionMatrix.data), projectionMatrix.data);
-	glBindBuffer(GL_UNIFORM_BUFFER, 0);
+    glBufferSubData(GL_UNIFORM_BUFFER, sizeof(projectionMatrix.data), sizeof(projectionMatrix.data), projectionMatrix.data);
+    glBindBuffer(GL_UNIFORM_BUFFER, 0);
 }
 
 Matrix4& FPSCamera::getViewMatrix() {
