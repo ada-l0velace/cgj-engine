@@ -1,13 +1,13 @@
 # cgj-engine
-C++ OpenGL engine
-What to install in linux
+C++ OpenGL engine   
+## What to install in linux
 
 ```bash
 $ sudo apt install libglew-dev mesa-utils libsfml-dev cmake
 $ sudo apt-get install libgtest-dev
 ```
 
-Generate Makefiles with cmake:
+## Generate Makefiles with cmake:
 
 ```bash
 $ cd Release
@@ -16,14 +16,14 @@ $ cd bin
 $ cmake -DCMAKE_BUILD_TYPE=Release ../
 ```
 
-**Compiling**
+## **Compiling**
 
 ```bash
 $ make
 make
 ```
 
-**Running**
+## **Running**
 
 ```bash
 $ ./game
