@@ -4,15 +4,12 @@ FPSCamera::FPSCamera(GLuint _UBO_BP,
                 Vector3 _position,
                 Vector3 _up, 
                 float _yaw, 
-                float _pitch) : ICamera(_UBO_BP) {
+                float _pitch) : ICamera(_UBO_BP),position(_position) {
     
-    movementSpeed = 9.00f;
+    movementSpeed = 2.00f;
     mouseSensitivity = 0.05f; 
     zoom = 3.0f;
 
-    //position = _position;
-    position = Vector3(-57.2633f, 10.0225f, 75.76f);
-    //position = Vector3(1.0f, 1.0f, 1.0f);
     worldUp = _up;
     yaw = _yaw;
     pitch = _pitch;
@@ -135,7 +132,7 @@ void FPSCamera::computeKeyboardInputs(Movement direction, GLfloat deltaTime) {
         this->position -= right * velocity;
     if (direction == RIGHT)
         this->position += right * velocity;
-    //updateView();
+    updateView();
     /*vMatrix = getViewMatrix();
     front = -Vector3(vMatrix.get(2,0),vMatrix.get(2,1),vMatrix.get(2,2)).normalize();
     right = Vector3(vMatrix.get(0,0),vMatrix.get(0,1),vMatrix.get(0,2)).normalize();
